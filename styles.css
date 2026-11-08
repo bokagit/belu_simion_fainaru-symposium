@@ -579,56 +579,126 @@ a {
 }
 
 .contact-strip {
-  padding: 0 0 78px;
+  padding: clamp(84px, 12vw, 170px) 0 78px;
   color: var(--paper);
   background: var(--ink);
+}
+
+.contact-intro {
+  width: var(--content);
+  margin: 0 auto clamp(48px, 6vw, 80px);
+}
+
+.contact-intro h2 {
+  margin: 0 0 28px;
+  color: var(--yellow);
+  font-family: var(--sans);
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: -0.055em;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.contact-intro p {
+  max-width: 820px;
+  margin: 0;
+  color: rgba(243, 239, 230, 0.72);
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+  line-height: 1.5;
+}
+
+.contact-grid {
+  width: var(--content);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 40px);
 }
 
 .contact-card {
-  width: var(--content);
-  min-height: 410px;
-  margin: 0 auto;
-  padding: clamp(58px, 7vw, 82px) clamp(28px, 7vw, 92px) clamp(48px, 6vw, 72px);
+  min-width: 0;
+  padding: 30px clamp(22px, 3vw, 52px) 16px;
   color: var(--paper);
-  background: var(--ink);
-  border-right: 1px solid rgba(243, 239, 230, 0.36);
-  border-bottom: 1px solid rgba(243, 239, 230, 0.36);
+  background: #292826;
+  border-top: 4px solid var(--yellow);
 }
 
-.contact-card > .eyebrow {
-  margin: 0 0 clamp(52px, 7vw, 78px);
-  color: var(--yellow);
-}
-
-.contact-card h2 {
-  margin: 0 0 34px;
-  font-family: var(--serif);
-  font-size: clamp(3.4rem, 6vw, 6rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 0.9;
-}
-
-.contact-strip__links {
-  width: 100%;
+.contact-method {
+  min-width: 0;
+  min-height: 108px;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px clamp(50px, 10vw, 150px);
+  grid-template-columns: 68px minmax(0, 1fr) 28px;
+  gap: 24px;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(243, 239, 230, 0.18);
 }
 
-.contact-strip__links a {
-  width: fit-content;
-  color: rgba(243, 239, 230, 0.78);
-  font-size: clamp(0.92rem, 1.5vw, 1.12rem);
-  font-weight: 500;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 7px;
-  transition: color 160ms ease;
+.contact-method:last-child {
+  border-bottom: 0;
 }
 
-.contact-strip__links a:hover,
-.contact-strip__links a:focus-visible {
+.contact-method__icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
   color: var(--yellow);
+  background: rgba(243, 239, 230, 0.08);
+  border-radius: 50%;
+  font-size: 1.65rem;
+  line-height: 1;
+}
+
+.contact-method__icon--whatsapp {
+  font-size: 1.8rem;
+}
+
+.contact-method__icon svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.contact-method__text {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.6vw, 1.45rem);
+  overflow-wrap: anywhere;
+}
+
+.contact-method__text > span:first-child {
+  color: rgba(243, 239, 230, 0.56);
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-method__value {
+  color: rgba(243, 239, 230, 0.94);
+}
+
+.contact-method__arrow {
+  color: rgba(243, 239, 230, 0.48);
+  font-size: 1.6rem;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.contact-method:hover .contact-method__arrow,
+.contact-method:focus-visible .contact-method__arrow {
+  color: var(--yellow);
+  transform: translateX(4px);
 }
 
 .site-footer {
@@ -889,27 +959,45 @@ a {
   }
 
   .contact-strip {
-    padding: 0 0 42px;
+    padding: 82px 0 42px;
   }
 
   .contact-card {
-    width: calc(100vw - 32px);
-    min-height: 0;
-    padding: 50px 20px 48px;
-    border-right: 0;
+    padding: 12px 18px 4px;
   }
 
-  .contact-card > .eyebrow {
-    margin-bottom: 46px;
+  .contact-intro {
+    margin-bottom: 38px;
   }
 
-  .contact-card h2 {
-    margin-bottom: 32px;
+  .contact-intro h2 {
+    margin-bottom: 22px;
+    font-size: clamp(4rem, 17vw, 5.2rem);
   }
 
-  .contact-strip__links {
+  .contact-grid {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 20px;
+  }
+
+  .contact-method {
+    min-height: 92px;
+    grid-template-columns: 52px minmax(0, 1fr) 22px;
+    gap: 14px;
+  }
+
+  .contact-method__icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .contact-method__icon svg {
+    width: 23px;
+    height: 23px;
+  }
+
+  .contact-method__text {
+    font-size: 1rem;
   }
 
 }
