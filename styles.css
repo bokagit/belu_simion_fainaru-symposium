@@ -386,6 +386,125 @@ a {
   font-size: 0.72rem;
 }
 
+.programme {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.session-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--ink);
+}
+
+.session {
+  padding: clamp(34px, 4vw, 52px) 0;
+  display: grid;
+  grid-template-columns: minmax(150px, 0.3fr) minmax(0, 1fr);
+  gap: clamp(24px, 5vw, 76px);
+  border-bottom: 1px solid var(--ink);
+}
+
+.session__meta {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.session__number {
+  color: var(--rust);
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.session__time {
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.session__body h3 {
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
+}
+
+.session__intro {
+  max-width: 62ch;
+  margin: 0 0 28px;
+  color: rgba(19, 19, 15, 0.72);
+  font-family: var(--serif);
+  font-size: 1.02rem;
+}
+
+.talk-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.talk-list li {
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  gap: 8px 28px;
+  align-items: baseline;
+  border-bottom: 1px solid var(--line);
+}
+
+.talk-list p {
+  margin: 0;
+}
+
+.talk__speaker {
+  font-size: 0.86rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.talk__speaker abbr {
+  margin-left: 6px;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.6;
+}
+
+.talk__title {
+  font-family: var(--serif);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.35;
+}
+
+.panel-note {
+  margin-top: clamp(48px, 6vw, 72px);
+  padding: clamp(28px, 4vw, 44px);
+  background: var(--yellow);
+  border: 1px solid var(--ink);
+}
+
+.panel-note .eyebrow {
+  margin-bottom: 14px;
+}
+
+.panel-note__names {
+  max-width: 980px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  line-height: 1.5;
+}
+
 .arsenale-note {
   padding-top: clamp(66px, 8vw, 104px);
   padding-bottom: clamp(66px, 8vw, 104px);
@@ -844,6 +963,18 @@ a {
     grid-template-columns: 110px 1fr;
   }
 
+  .session {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .session__meta {
+    grid-auto-flow: column;
+    justify-content: start;
+    align-items: baseline;
+    gap: 18px;
+  }
+
   .arsenale-note__details {
     grid-column: 2;
   }
@@ -992,6 +1123,11 @@ a {
   .arsenale-note {
     grid-template-columns: 1fr;
     gap: 30px;
+  }
+
+  .talk-list li {
+    grid-template-columns: 1fr;
+    gap: 4px;
   }
 
   .arsenale-note__details {
