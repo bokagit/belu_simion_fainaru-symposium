@@ -505,6 +505,20 @@ a {
   line-height: 1.5;
 }
 
+.video-caption a {
+  color: var(--yellow);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.video-caption a:hover,
+.video-caption a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .arsenale-note {
   padding-top: clamp(66px, 8vw, 104px);
   padding-bottom: clamp(66px, 8vw, 104px);
