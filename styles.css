@@ -1272,6 +1272,121 @@ a {
 
 }
 
+/* Speaker chapters under the video — compact, two columns on wide screens */
+.chapters {
+  margin-top: clamp(24px, 4vw, 40px);
+}
+
+.chapters h3 {
+  margin: 0 0 2px;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+
+.chapters-hint {
+  margin: 0 0 12px;
+  opacity: 0.65;
+  font-size: 0.85rem;
+}
+
+.chapter-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.3;
+  column-count: 2;
+  column-gap: 40px;
+}
+
+.chapter-list li {
+  break-inside: avoid;
+}
+
+.chapter-session {
+  padding: 12px 0 4px;
+  color: var(--yellow);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  break-after: avoid;
+}
+
+.chapter-list li:first-child.chapter-session,
+.chapter-list > li:first-child {
+  padding-top: 0;
+}
+
+.chapter {
+  display: grid;
+  grid-template-columns: 3.6rem 1fr;
+  align-items: baseline;
+  gap: 12px;
+  width: 100%;
+  padding: 7px 8px;
+  color: inherit;
+  background: none;
+  border: 0;
+  border-bottom: 1px solid rgba(243, 239, 230, 0.12);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.chapter:hover,
+.chapter:focus-visible {
+  color: var(--ink);
+  background: var(--yellow);
+  outline: none;
+}
+
+.chapter.is-active {
+  box-shadow: inset 3px 0 0 var(--yellow);
+}
+
+.chapter-time {
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.55;
+}
+
+.chapter-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chapter-speaker {
+  font-size: 0.98rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.chapter-title {
+  overflow: hidden;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.62;
+}
+
+.chapter:hover .chapter-time,
+.chapter:hover .chapter-title,
+.chapter:focus-visible .chapter-time,
+.chapter:focus-visible .chapter-title {
+  opacity: 0.85;
+}
+
+@media (max-width: 920px) {
+  .chapter-list {
+    column-count: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
